@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="formulario">
+<table class="table">
+    <tr>
+        <th>Nombre de la editorial</th>
+        <th>Opciones</th>
+    </tr>
+        {% for editorial in consulta_editorial %}
+        <tr>
+            <td>{{editorial.nombre_editorial}}</td>
+            <td><a href="/editarEditorial/{{editorial.id_editorial}}">Editar</a></td>
+            <td><a href="/eliminarEditorial/{{editorial.id_editorial}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+</table>
+<button onclick="window.location.href='/'">Regresar</button>
+{% endblock %}
+</div>

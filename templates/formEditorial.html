@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="formulario">
+    <form action="/registrar_editorial" method ="post" class="box">
+        <div class="field">
+            <p class="title is-4 is-primary has-text-centered">Registro de Editorial</p>
+            <label class="label">Nombre</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name = "nombre_editorial" type="text" placeholder="Planeta">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+        
+        <button class="button is-primary is-fullwidth">Registrar</button>
+    </form>
+</div>
+<button onclick="window.location.href='/'">Regresar</button>
+{% endblock %}

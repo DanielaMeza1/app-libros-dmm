@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="formulario">
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Fecha de nacimiento</th>
+        <th>Nacionalidad</th>
+        <th>Opciones</th>
+    </tr>
+        {% for autor in consulta_autor %}
+        <tr>
+            <td>{{autor.nombre_autor}}</td>
+            <td>{{autor.fecha_nac}}</td>
+            <td>{{autor.nacionalidad}}</td>
+            <td><a href="/editarAutor/{{autor.id_autor}}">Editar</a></td>
+            <td><a href="/eliminarAutor/{{autor.id_autor}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+</table>
+<button onclick="window.location.href='/'">Regresar</button>
+{% endblock %}
+</div>

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="formulario"> 
+      <form action="/registrar_usuario" method ="post" class="box">
+        <div class="card-content">
+          <p class="title is-4 is-primary has-text-centered">Regístrate</p>
+    
+        <div class="content">
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" name="email" placeholder="Email">
+                  <span class="icon is-small is-left">
+                    <i class="material-icons"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input" type="password" name="password" placeholder="Password">
+                  <span class="icon is-small is-left">
+                    <i class="material-icons"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <a href="/inicio">Iniciar Sesión</a>
+              </div>
+              <button class="button is-fullwidth is-primary">Registrar</button>
+        </div>
+        </div>
+      </form>
+</div> 
+<button onclick="window.location.href='/'">Regresar</button>
+{% endblock %}

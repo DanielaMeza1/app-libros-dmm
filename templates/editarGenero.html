@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="formulario">
+    <form action="/modificarGenero" method ="post" class="box">
+        <input type="hidden" name="id_genero" value="{{genero.id_genero}}">
+        <div class="field">
+            <p class="title is-4 is-primary has-text-centered">Editar el Género Literario</p>
+            <label class="label">Descripción</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name="nombre_genero" type="text" placeholder="Fantasia">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+        
+        <button class="button is-primary is-fullwidth">Editar</button>
+    </form>
+</div>
+{% endblock %}

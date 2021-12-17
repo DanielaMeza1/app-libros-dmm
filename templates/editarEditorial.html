@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="formulario">
+    <form action="/modificarEditorial" method ="post" class="box">
+        <input type="hidden" name="id_editorial" value="{{editorial.id_editorial}}">
+        <div class="field">
+            <p class="title is-4 is-primary has-text-centered">Editar la Editorial</p>
+            <label class="label">Nombre</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name = "nombre_editorial" type="text" placeholder="Planeta">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+        
+        <button class="button is-primary is-fullwidth">Editar</button>
+    </form>
+</div>
+
+{% endblock %}

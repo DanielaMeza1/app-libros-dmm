@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="formulario">
+    <form action="/modificarAutor" method ="post" class="box">
+        <input type="hidden" name="id_autor" value="{{autor.id_autor}}">
+        <div class="field">
+            <p class="title is-4 is-primary has-text-centered">Editar autor</p>
+            <label class="label">Nombre</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name="nombre_autor" type="text" placeholder="Rebecca Sugar">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Fecha de nacimiento</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name="fecha_nac" type="text" placeholder="09/07/1987">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Nacionalidad</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name = "nacionalidad" type="text" placeholder="Estadounidense">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+        
+        <button class="button is-primary is-fullwidth">Editar</button>
+    </form>
+</div>
+<button onclick="window.location.href='/'">Regresar</button>
+{% endblock %}

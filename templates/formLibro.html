@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<div class="formulario">
+    <form action="/registrar_libro" method ="post" class="box form_libro">
+      <p class="title is-4 is-primary has-text-centered">Registro de Libro</p>
+        <div class="field">
+            <label class="label">Título</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name="titulo_libro" type="text" placeholder="La respuesta">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Fecha de publicación</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name="fecha_publicacion" type="text" placeholder="15/06/2017">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Número de páginas</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" name="numero_paginas" type="text" placeholder="650">
+            <span class="icon is-small is-left">
+                <i class="material-icons"></i>
+              </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Formato</label>
+            <div class="control has-icons-left has-icons-right">
+              <div class="control has-icons-left">
+                <div class="select">
+                  <select name="formato">
+                    <option selected>Selecciona una opción</option>
+                    <option>Digital</option>
+                    <option>Fisico</option>
+                  </select>
+                </div>
+            <span class="icon is-small is-left">
+              </span>
+            </div>
+        </div>
+      </div>
+
+      <div class="field">
+          <label class="label">Volumen</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" name="volumen" type="text" placeholder="1">
+                <span class="icon is-small is-left">
+                  <i class="material-icons"></i>
+                </span>
+            </div>
+      </div>
+
+        <div class="field">
+          <select name="editorial">
+              {% for editorial in consulta_editorial %}
+                <option value="{{editorial.id_editorial}}">
+                  {{editorial.nombre_editorial}}
+                </option>
+              {% endfor %}
+          </select>
+        </div>
+
+        <div class="field">
+          <select name="autor">
+            {% for autor in consulta_autor %}
+            <option value="{{autor.id_autor}}">
+              {{autor.nombre_autor}}
+            </option>
+          {% endfor %}
+      </select>
+        </div>
+
+        <div class="field">
+          <select name="genero">
+            {% for genero in consulta_genero %}
+            <option value="{{genero.id_genero}}">
+              {{genero.nombre_genero}}
+            </option>
+          {% endfor %}
+      </select>
+        </div>
+        <button class="button is-primary is-centered">Registrar</button>
+    </form>
+</div>
+<button onclick="window.location.href='/'">Regresar</button>
+{% endblock %}

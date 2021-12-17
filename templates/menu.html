@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+  {% block head %}
+  <link rel="stylesheet" href="/static/css/estilo.css"/>
+    <title>Menu</title>
+    <h1 style="text-align:center">Menú principal</h1>
+  
+    
+  {% endblock %}
+
+  {% block content %}
+  <html>
+  <body>
+    <header>
+      <nav>
+        <ul id="menu">
+          <li><a href="/inicio">Inicio</a></li>
+          <li><a href="">Añadir</a>
+            <ul>
+              <li><a href="/formulario_libro">Libro</a></li>
+              <li><a href="/formulario_autor">Autor</a></li>
+              <li><a href="/formulario_editorial">Editorial</a></li>
+              <li><a href="/formulario_genero">Genero</a></li>
+            </ul>  
+          </li>
+          <li><a href="/catalogo">Catalogo</a>
+          <ul>
+            <li><a href="/catalogo">Libro</a></li>
+            <li><a href="/catalogoAutores">Autor</a></li>
+            <li><a href="/catalogoEditorial">Editorial</a></li>
+            <li><a href="/catalogoGenero">Genero</a></li>
+          </ul>
+          </li>
+          <li><a href="">Mis favoritos</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
+
+
+  {% endblock %}
+
+  {% block footer %}
+  
+  {% endblock %}

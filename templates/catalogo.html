@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="formulario">
+<table class="table">
+    <tr>
+        <th>Titulo de libro</th>
+        <th>Genero</th>
+        <th>Autor</th>
+        <th>Editorial</th>
+        <th>Numero de paginas</th>
+        <th>Formato</th>
+        <th>Volumen</th>
+        <th>Fecha de publicación</th>
+        <th>Opciones</th>
+    </tr>
+    {% for libro in libros %}
+    <tr>
+        <td>{{libro.titulo_libro}}</td>
+        <td>{{libro.nombre_genero}}</td>
+        <td>{{libro.nombre_autor}}</td>
+        <td>{{libro.nombre_editorial}}</td>
+        <td>{{libro.numero_paginas}}</td>
+        <td>{{libro.formato}}</td>
+        <td>{{libro.volumen}}</td>
+        <td>{{libro.fecha_publicacion}}</td>
+        <td><a href="/editarLibro/{{libro.id_libro}}">Editar</a></td>
+        <td><a href="/eliminarLibro/{{libro.id_libro}}">Eliminar</a></td>
+        <td><a href="/addFav/{{libro.id_libro}}">Añadir a favoritos</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+<button onclick="window.location.href='/'">Regresar</button>
+    {% endblock %}
+</div>
